@@ -19,26 +19,26 @@ end_button.addEventListener("click", function() {
   paragraph.style.backgroundColor = "white";
 } );
 
-login_button.addEventListener("click", function() {
-  const username = loginForm.username.value;
-  const password = loginForm.password.value; 
-  if (login_button.textContent === "Ingresar"){
-    if (username === "Admin" && password === "FullStacker") {
+function LogIn (){
+  console.log("entro a la funcion");
+  const username = document.getElementById("username");
+  const password = document.getElementById("password");
+    console.log("username: " + username.value + " password: " + password.value);
+    if (username.value === "Admin" && password.value === "FullStacker") {
       alert("You have successfully logged in.");
       login_button.textContent = "Salir";
-      Array.from(document.getElementsByClassName("privilegio"))
-      .forEach((element) => element.classList.remove("privilegio"));
+      Array.from(document.getElementsByClassName("privilegio")).forEach((element) => element.classList.remove("privilegio"));
       document.getElementById('id01').style.display="none";
   } else {
       alert("Invalid username or password");
   }
-  }else{
-    login_button.textContent = "Ingresar";
-    Array.from(elementsX) 
-  .forEach((element) => element.classList.add("privilegio")); 
-  }
-} );
+};
+
+function LogOut(){
+  Array.from(elementsX).forEach((element) => element.classList.add("privilegio")); 
+};
 
 function OpenLoginModal() {
   document.getElementById('id01').style.display='block'
-}
+};
+
