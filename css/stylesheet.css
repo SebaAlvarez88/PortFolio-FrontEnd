@@ -230,4 +230,9 @@ span.psw {
 
 #logout {
   display: none;
+  cursor: pointer;
+}
+
+#login {
+  cursor: pointer;
 }

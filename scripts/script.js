@@ -1,23 +1,21 @@
-const paragraph = document.getElementById("edit");
-const edit_button = document.getElementById("edit-button");
-const end_button = document.getElementById("end-editing");
 const login_button = document.getElementById("login");
-
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 
 
 const elementsX = Array.from(document.getElementsByClassName("privilegio"));
 
-edit_button.addEventListener("click", function() {
+function Editable(id) {
+  let paragraph = document.getElementById(id);
   paragraph.contentEditable = true;
   paragraph.style.backgroundColor = "#dddbdb";
-} );
+};
 
-end_button.addEventListener("click", function() {
+function NoEditable(id) {
+  let paragraph = document.getElementById(id);
   paragraph.contentEditable = false;
   paragraph.style.backgroundColor = "white";
-} );
+};
 
 function LogIn (){
   console.log("entro a la funcion");
