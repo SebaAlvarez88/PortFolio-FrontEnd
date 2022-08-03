@@ -26,9 +26,10 @@ function LogIn (){
     console.log("username: " + username.value + " password: " + password.value);
     if (username.value === "Admin" && password.value === "FullStacker") {
       alert("You have successfully logged in.");
-      login_button.textContent = "Salir";
       Array.from(document.getElementsByClassName("privilegio")).forEach((element) => element.classList.remove("privilegio"));
       document.getElementById('id01').style.display="none";
+      document.getElementById('login').style.display="none";
+      document.getElementById('logout').style.display="block";
   } else {
       alert("Invalid username or password");
   }
@@ -36,9 +37,11 @@ function LogIn (){
 
 function LogOut(){
   Array.from(elementsX).forEach((element) => element.classList.add("privilegio")); 
+  document.getElementById('login').style.display="block";
+  document.getElementById('logout').style.display="none";
 };
 
 function OpenLoginModal() {
-  document.getElementById('id01').style.display='block'
+  document.getElementById('id01').style.display="block"
 };
 
